@@ -1,0 +1,5 @@
+# Configuration file. Copy this to config.rb, and edit as needed.
+set :host, 'myhost.com'
+set :port, '4201'
+set :connect_string, 'ch GitBot mypass' # make sure and @power *Gitbot=hide :)
+set :channel, 'Git'

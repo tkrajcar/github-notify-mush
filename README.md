@@ -20,9 +20,18 @@ Sample output:
     in another window, run `ruby test.rb` (edit `test.rb` if you change ports or for some reason aren't running it on localhost
     first!) If everything is working, the bot should log in and @cemit a few sample commit notices. If you don't see this, check the window you ran `rackup` in
     and look for exceptions, check your MUSH log files to see if it tried to connect, etc.
-9.  Deploy the Sinatra application to whatever webserver you want to use it on (this runs especially well on [Heroku](http://www.heroku.com/)), run `test.rb` against the 'live' URL to make sure it works, and then log into Github,
-    go to the repository you want to report commits to, go to 'Admin', go to 'Service Hooks', select 'Post-Receive URLs', and add your live URL. You can have
-    multiple repositories hitting the same URL - the bot reports the repository name as part of its process.
+9.  Deploy the Sinatra application to whatever webserver you want to use it on, run `test.rb` against the 'live' URL to make sure it works, and then log into Github,
+    go to the repository you want to report commits to, go to 'Admin', go to 'Service Hooks', select 'Post-Receive URLs', and add your live URL. Hit 'Test Hook' and you should get notified!
+    You can have multiple repositories hitting the same URL - the bot reports the repository name as part of its process.
+
+## Deploying on Heroku
+This app works just fine on Heroku (that's where I run it). Since Heroku doesn't support non-Gitted files, you can't use config.rb, but the code looks for Heroku
+environment variables if present and uses those instead.
+
+So, run this:
+`heroku config:add GITHUB_NOTIFY_HOST=mymush.com GITHUB_NOTIFY_PORT=4201 GITHUB_NOTIFY_CONNECT_STRING="ch Github mypass" GITHUB_NOTIFY_CHANNEL=Git`
+
+Then check with `heroku config` and make sure everything's set.
 
 ## Support
 I'm Eratl @ `M*U*S*H` and can be reached by email as well, and will be happy to help as time and energy allows if you have issues.

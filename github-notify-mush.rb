@@ -2,8 +2,16 @@ require 'sinatra'
 require 'json'
 require 'net/telnet'
 
-$LOAD_PATH.push File.expand_path(".")
-require 'config.rb'
+
+set :host, ENV['GITHUB_NOTIFY_HOST']
+set :port, ENV['GITHUB_NOTIFY_PORT']
+set :connect_string, ENV['GITHUB_NOTIFY_CONNECT_STRING']
+set :channel, ENV['GITHUB_NOTIFY_CHANNEL']
+
+if(File.exists?("config.rb"))
+  $LOAD_PATH.push File.expand_path(".")
+  require 'config.rb'
+end
 
 get '/' do
   "Yay, the Github notifier is set up and running properly and will connect to #{settings.host} #{settings.port}. Edit test.rb and set base_url to #{request.url} and then run ruby test.rb. If everything works, you're ready to add #{request.url} to Github."

@@ -1,7 +1,7 @@
 require 'net/http'
 require 'uri'
 
-base_url = "http://localhost:9292/" # change as needed.
+base_url = "http://localhost:4567/" # change as needed.
 
 # Sample payload, from the Github documentation.
 json = <<JSON

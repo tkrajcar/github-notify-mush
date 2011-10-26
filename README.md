@@ -16,9 +16,9 @@ Sample output:
 5.  Set up the MUSH-side player to login to - `@pcreate Gitbot=mypass`, `@power *gitbot=cemit hide`, etc.
 6.  Set up the MUSH-side channel - `@chan/add Git`, `@chan/on git=me gitbot`
 7.  Copy `config.rb.dist` to `config.rb`, and edit it to have the correct parameters that you just set up.
-8.  Test and make sure everything's working by running the web app locally: run `rackup -p 9292 config.ru` and,
-    in another window, run `ruby test.rb` (edit `test.rb` if you change ports or for some reason aren't running it on localhost
-    first!) If everything is working, the bot should log in and @cemit a few sample commit notices. If you don't see this, check the window you ran `rackup` in
+8.  Test and make sure everything's working by running the web app locally: run `ruby github-notify-mush.rb` and,
+    in another window, run `ruby test.rb` (edit `test.rb` if you aren't running it on localhost
+    first!) If everything is working, the bot should log in and @cemit a few sample commit notices. If you don't see this, check the Sinatra window
     and look for exceptions, check your MUSH log files to see if it tried to connect, etc.
 9.  Deploy the Sinatra application to whatever webserver you want to use it on, run `test.rb` against the 'live' URL to make sure it works, and then log into Github,
     go to the repository you want to report commits to, go to 'Admin', go to 'Service Hooks', select 'Post-Receive URLs', and add your live URL. Hit 'Test Hook' and you should get notified!

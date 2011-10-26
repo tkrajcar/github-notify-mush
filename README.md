@@ -29,7 +29,7 @@ This app works just fine on Heroku (that's where I run it). Since Heroku doesn't
 environment variables if present and uses those instead.
 
 So, run this:
-`heroku config:add GITHUB_NOTIFY_HOST=mymush.com GITHUB_NOTIFY_PORT=4201 GITHUB_NOTIFY_CONNECT_STRING="ch Github mypass" GITHUB_NOTIFY_CHANNEL=Git`
+`heroku config:add GITHUB_NOTIFY_HOST=mymush.com GITHUB_NOTIFY_PORT=4201 GITHUB_NOTIFY_CONNECT_STRING="ch GitBot mypass" GITHUB_NOTIFY_CHANNEL=Git`
 
 Then check with `heroku config` and make sure everything's set.
 

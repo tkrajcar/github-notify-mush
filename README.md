@@ -11,7 +11,7 @@ Sample output:
 ## Installation Steps
 1.  [Install Ruby](http://www.ruby-lang.org/en/downloads/).
 2.  Install bundler via `gem install bundler` if you don't already have it.
-3.  Download the latest package from https://github.com/tkrajcar/wcnh_gitnotify/downloads and extract it somewhere.
+3.  Download the latest package from https://github.com/tkrajcar/github-notify-mush/tarball/master and extract it somewhere.
 4.  In that extracted directory, run `bundle install` to install Sinatra and dependencies.
 5.  Set up the MUSH-side player to login to - `@pcreate Gitbot=mypass`, `@power *gitbot=cemit hide`, etc.
 6.  Set up the MUSH-side channel - `@chan/add Git`, `@chan/on git=me gitbot`

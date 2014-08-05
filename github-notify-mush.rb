@@ -22,7 +22,7 @@ post '/' do
   messages = []
   repository = parse["repository"]
   parse["commits"].each do |commit|
-    messages.push "@cemit/noisy #{settings.mush_channel}=[ansi(hy,#{commit['author']["name"]})] pushed [ansi(h,#{commit['id'][0..9]})] to [ansi(hy,#{repository['name']})]:%r[align(5 73,,lit(#{commit['message']}))]"
+    messages.push "@cemit/noisy #{settings.mush_channel}=[ansi(hy,#{commit['author']["name"]})] pushed [ansi(h,#{commit['id'][0..9]})] to [ansi(hy,#{repository['name']})]/[ansi(y,#{parse["ref"].split('/').last})]:%r[align(5 73,,lit(#{commit['message']}))]"
     if !commit["added"].nil? && commit["added"].length > 0
       messages.push "@cemit #{settings.mush_channel}=[align(5 12 60,,ansi(hg,Added:),ansi(g,lit(#{commit['added'].to_sentence})))]"
     end

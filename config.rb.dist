@@ -3,3 +3,4 @@ set :mush_host, 'myhost.com'
 set :mush_port, '4201'
 set :mush_connect_string, 'ch GitBot mypass' # make sure and @power *Gitbot=hide :)
 set :mush_channel, 'Git'
+set :mush_ismux, false # set to true if MUX instead of Penn

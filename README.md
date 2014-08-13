@@ -13,7 +13,7 @@ Sample output:
 2.  Install bundler via `gem install bundler` if you don't already have it.
 3.  Download the latest package from https://github.com/tkrajcar/github-notify-mush/tarball/master and extract it somewhere.
 4.  In that extracted directory, run `bundle install` to install Sinatra and dependencies.
-5.  Set up the MUSH-side player to login to - `@pcreate Gitbot=mypass`, `@power *gitbot=cemit hide`, etc.
+5.  Set up the MUSH-side player to login to - `@pcreate Gitbot=mypass`, `@power *gitbot=cemit hide` (or `comm_all hide` on MUX), etc.
 6.  Set up the MUSH-side channel - `@chan/add Git`, `@chan/on git=me gitbot`
 7.  Copy `config.rb.dist` to `config.rb`, and edit it to have the correct parameters that you just set up.
 8.  Test and make sure everything's working by running the web app locally: run `ruby github-notify-mush.rb` and,
@@ -29,15 +29,16 @@ This app works just fine on Heroku (that's where I run it). Since Heroku doesn't
 environment variables if present and uses those instead.
 
 So, run this:
+
 `heroku config:add GITHUB_NOTIFY_HOST=mymush.com GITHUB_NOTIFY_PORT=4201 GITHUB_NOTIFY_CONNECT_STRING="ch GitBot mypass" GITHUB_NOTIFY_CHANNEL=Git`
 
 Then check with `heroku config` and make sure everything's set.
 
 ## Support
-I'm Eratl @ `M*U*S*H` and can be reached by email as well, and will be happy to help as time and energy allows if you have issues.
+I'm Rince @ `M*U*S*H` and can be reached by email as well, and will be happy to help as time and energy allows if you have issues.
 
 ## License
-Copyright (c) 2011 Tim Krajcar - allegro@conmolto.org
+Copyright (c) 2011-2014 Tim Krajcar - allegro@conmolto.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

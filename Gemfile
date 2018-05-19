@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-ruby '2.1.2'
+ruby '2.5.1'
 
-gem 'sinatra'
+gem 'sinatra', '~> 1.x'
 gem 'json'
